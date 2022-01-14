@@ -1,0 +1,379 @@
+/* ============================
+DEFAULT PAGE STYLING
+===============================*/
+
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+    margin: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    background-color: #dddddd;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Noto Serif', serif;
+    line-height: 1;
+}
+
+h2,
+h3,
+h4,
+p {
+    margin-bottom: 1em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.0em;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+footer {
+    margin-top: 1em;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1em;
+    padding: 0;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.5em;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: #589e83;
+}
+
+.error-message {
+    color: #d36652;
+}
+
+/* ============================
+BLOCK COLOURS
+==============================*/
+
+.background-light {
+    background-color: #b6bace;
+    color: #302f2d;
+}
+
+.background-dark {
+    background-color: #33343d;
+    color: #dddddd;
+}
+
+.background-dark a {
+    color: #76c7c7;
+}
+
+.square {
+    background-color: #546e6e;
+    padding: 0em;
+    margin-top: 1em;
+    color: #f3f3f3;
+}
+/* ============================
+NAV AND HEADER 
+===============================*/
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+nav li {
+    background-color: #302f2d;
+    flex-basis: 100%;
+}
+
+nav a {
+    color: #dddddd;
+    font-size: 1em;
+    position: relative;
+    padding: 0 1em 0 1em;
+}
+
+.selected {
+    color: #9fbae2;
+}
+
+/* ---------- Nav Animation --------------- */
+
+/* Green underline bar that appears from the left */
+nav a:before { 
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0.1em; /* Height of blue underline when appearing */
+    width: 0;
+}
+
+/* Green underline disappearing to the right */
+nav a:after { 
+    content: ''; /* Empty space needed for the line */
+    display: block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 0.1em; 
+    width: 0;
+    background: #589e83;
+    transition: width .5s ease; /* Animates the width to change in 0.5 seconds, eased movement */
+}
+
+/* Styling before underline appears */
+nav a:hover:before { 
+    width: 100%;
+    background: #589e83;
+    transition: width .5s ease;
+}
+
+/* Styling after underline disappears */
+nav a:hover:after { 
+    width: 100%;
+    background: transparent;
+    transition: all 0s ease;
+}
+
+
+/* ---------- Nav Responsive ------------- */
+
+@media (min-width: 55em) {
+    nav a {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 45em) {
+    .heading {
+        flex-direction: row;
+    }
+
+    .heading > * {
+        margin-left: 1em;
+        flex-basis: 100%;
+    }
+    nav ul {
+        flex-direction: row;
+    }
+
+}
+
+/* ===========================
+STATIC LAYOUT
+==============================*/
+
+/* ------ Header ----------*/
+
+header h1 {
+    font-family: 'Italianno', serif;
+    font-size: 2.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0em;
+}
+
+header p {
+    font-family: 'Italianno', serif;
+    font-size: 1.0rem;
+    margin-bottom: 0em;
+}
+
+.heading {
+    display: flex;
+    flex-direction: column;
+}
+
+/*----------- Main ------------ */
+
+section {
+    padding: 2rem 0;
+}
+
+.container {
+    margin-inline: auto;
+    width: min(90%, 80rem);
+}
+
+.text-centre {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    flex-direction: column;
+}
+
+.head-image {
+    margin-top: -2.6em;
+    width: 100%;
+    height: 25em;
+    object-fit: cover;
+}
+
+.main-splash {
+    position: relative;
+}
+
+.main-splash h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #f3f3f3;
+    text-shadow: 3px 3px #302f2d;
+    font-size: 2rem;
+}
+
+.square h3,
+p {
+    padding: 0.5em;
+}
+
+.list-container {
+    padding: 0 1em;
+}
+
+.list-section {
+    margin-inline: auto;
+    margin-top: 1.5em;
+    width: min(90%, 80rem);
+    background-color: #565c69;
+    color: #dddddd;
+}
+
+.list-link {
+    color: #dddddd;
+    text-decoration: underline;
+}
+
+/* -----------Search Bar-----------*/
+#search-form {
+    max-width: 100%;
+    
+}
+
+#search-form input{
+    max-width: 100%;
+    flex-direction: row;
+}
+
+#search-form button{
+    max-width: 100%;
+    flex-direction: row;
+
+}
+
+/* -----------Footer------------- */
+
+footer h3 {
+    font-family: 'Italianno', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5em;
+}
+
+/* ============================
+RESPONSIVE LAYOUT
+===============================*/
+@media (min-width: 45em) {
+    /*  header */
+    header h1 {
+        font-size: 4.5rem;
+        margin-top: 1rem;
+    }
+
+    header p {
+        font-size: 2.5rem;
+    }
+    /* main */
+    .main-splash h2 {
+        font-size: 3em;
+    }
+
+    .head-image {
+        height: 45em;
+    }
+
+    /* changes the flexbox direction to row to allow column elements to display as columns */
+    .flex {
+        flex-direction: row;
+    }
+    /* grabs the flexbox container as well as its children and applies a flex basis of 100% to make each element of equal width */
+    .flex > * {
+        flex-basis: 100%;
+    }
+    /* Grabs the children of flex that have a sibling element before self*/
+    .flex > * + * {
+        margin-left: 1em;
+    }
+    #search-form {
+        max-width: 50%;
+        flex-direction: row;
+    }
+}
+
+/* ============================
+FORMS
+===============================*/
+.form-section {
+    width: 75%;
+    min-height: 25rem;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.form-container {
+    max-width: 50%;
+    margin: auto;
+    padding: 0.5rem;
+}
+
+.form-container label, input {
+    display: block;
+    width: 100%;
+}
+
+.submit-button {
+    border: 0;
+    background-color: #589e83;
+    padding: 0.5rem;
+    color: #33343d;
+    margin: 1rem 0;
+    width: auto;
+}
+
